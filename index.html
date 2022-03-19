@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANDOM NUMBER GAME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="init()">
+    <main>
+        <div id="welcomeScreen">
+            <h2>Guess the random number</h2>
+            <img class ="image" src="game.svg" alt="game" width="350px">    
+            
+            <section class="eventSection">
+                 <p>Select difficulty</p>
+                 <div class="buttton-wrapper">
+                     <button onclick="easyMode()">Easy: 10 Attemps</button>
+                     <button onclick="hardMode()">Hard: 5 Attemps</button>
+                 </div>
+            </section>
+
+        </div>
+
+        <!-- game-page -->
+        <div id="gameArea">
+            <div id="newGameButton">
+                <button onclick="newGame()">New Game</button>
+            </div>
+
+            <section>
+                <h3 id="textOutput">Your Guess</h3>
+                <!-- can also use disabled for box not to work -->
+                <input type="number" onchange="compareGuess()" id="inputBox" min="1" max="100" placeholder="Enter Your number"> 
+            </section>
+
+            <section class="stats">
+                <div class="info">
+                    <p>Number of previous Attempts</p>
+                    <span id="attempts">0</span>
+                </div>
+                <div class="info">
+                    <p>Number of previous Guesses</p>
+                    <span id="guesses">0</span>
+                </div>
+                <!-- <div id="goback">
+                    <button onclick="goBack()">Go  Back</button>
+                </div> -->
+            </section>
+        </div>
+
+
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
